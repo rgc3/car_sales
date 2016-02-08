@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Vehicles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Body style</th>
+      <th>Miles</th>
+      <th>Color</th>
+      <th>Engine</th>
+      <th>Drivetrain</th>
+      <th>Transmission</th>
+      <th>Fuel type</th>
+      <th>Options</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.make %></td>
+        <td><%= vehicle.model %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= vehicle.body_style %></td>
+        <td><%= vehicle.miles %></td>
+        <td><%= vehicle.color %></td>
+        <td><%= vehicle.engine %></td>
+        <td><%= vehicle.drivetrain %></td>
+        <td><%= vehicle.transmission %></td>
+        <td><%= vehicle.fuel_type %></td>
+        <td><%= vehicle.options %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehicle', new_vehicle_path %>
