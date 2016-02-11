@@ -2,49 +2,45 @@
 
 <h1>Vehicles for Sale</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Make</th>
-      <th>Model</th>
-      <th>Year</th>
-      <th>Body style</th>
-      <th>Miles</th>
-      <th>Color</th>
-      <th>Engine</th>
-      <th>Drivetrain</th>
-      <th>Transmission</th>
-      <th>Fuel type</th>
-      <th>Options</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
 
 
-  <tbody>
-    <% @vehicles.each do |vehicle| %>
-      <tr>
-        <td><%= vehicle.make %></td>
-        <td><%= vehicle.model %></td>
-        <td><%= vehicle.year %></td>
-        <td><%= vehicle.body_style %></td>
-        <td><%= vehicle.miles %></td>
-        <td><%= vehicle.color %></td>
-        <td><%= vehicle.engine %></td>
-        <td><%= vehicle.drivetrain %></td>
-        <td><%= vehicle.transmission %></td>
-        <td><%= vehicle.fuel_type %></td>
-        <td><%= vehicle.options %></td>
-        <%= image_tag vehicle.avatar.url(:medium), class: "img-responsive" %>
-        <td><%= link_to 'Show', vehicle %></td>
-        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
-        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+
+  <% @vehicles.each do |vehicle| %>
+
+  <div class="col-md-6">
+      
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><strong><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %></strong></h3>
+      </div>
+    <div class="panel-body">
+      <%= image_tag vehicle.avatar.url(:medium), class: "img-responsive" %>
+      <p><%= vehicle.body_style %></p>  
+      <p>Color: <%= vehicle.color %></p>
+      <p>Engine: <%= vehicle.engine %></p>
+      <p>Drivetrain: <%= vehicle.drivetrain %></p>
+      <p>Transmission: <%= vehicle.transmission %></p>
+      <p>Fuel Type: <%= vehicle.fuel_type %></p>
+      <p>Options: <%= vehicle.options %></p>
+    </div>
+    <div class="panel-footer">Miles: <%= vehicle.miles %></div>
+    </div>
+   
+        <%= link_to 'Show', vehicle %>
+        <%= link_to 'Edit', edit_vehicle_path(vehicle) %>
+        <%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <% end %>
+</div>
+
 
 <br>
 
 <%= link_to 'New Vehicle', new_vehicle_path %>
+
+
+
+
+
