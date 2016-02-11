@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Vehicles for Sale</h1>
+<h1 class="titles">Vehicles for Sale</h1>
 
 
 
@@ -27,18 +27,19 @@
     </div>
     <div class="panel-footer">Miles: <%= vehicle.miles %></div>
     </div>
-   
-        <%= link_to 'Show', vehicle %>
-        <%= link_to 'Edit', edit_vehicle_path(vehicle) %>
-        <%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    <button type="button" class="btn btn-default btn-xs"><%= link_to 'Show', vehicle %></button>
+    <button type="button" class="btn btn-default btn-xs"><%= link_to 'Edit', edit_vehicle_path(vehicle) %></button>
+    <button type="button" class="btn btn-default btn-xs"><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></button>     
+        
   </div>
   <% end %>
 </div>
 
 
 <br>
+<button type="button" class="btn btn-default btn-xs"><%= link_to 'New Vehicle', new_vehicle_path %></button>  
 
-<%= link_to 'New Vehicle', new_vehicle_path %>
 
 
 

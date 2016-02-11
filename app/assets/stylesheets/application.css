@@ -26,6 +26,27 @@ body {
 	border-radius: 10px;
 }
 
+.titles {
+	font-family: 'Play', sans-serif;
+}
+
+.navbar-brand {
+	font-family: 'Orbitron', sans-serif;
+}
+
+.nav {
+	font-family: 'Orbitron', sans-serif;
+}
+
+p {
+	font-family: 'News Cycle', sans-serif;
+	font-size: 150%;
+}
+
+.text {
+	font-family: 'News Cycle', sans-serif;
+	font-size: 150%;
+}
 
 /*navbar*/
 
